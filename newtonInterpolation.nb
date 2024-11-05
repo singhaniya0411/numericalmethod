@@ -1,0 +1,11 @@
+sum=0; 
+points={{3,8},{5,15},{8,21},{9,24}}; 
+n=Length[points]; 
+y=points[[All,1]]; 
+f=points[[All,2]]; 
+dd[k_]:=Sum[(f[[i]]/Product[If[Equal[j,i],1,(y[[i]]-y[[j]])],{j,1,k}]),{i,1,k}]; 
+p[x_]:=Sum[(dd[i]*Product[If[i£j,1,x-y[[j]]],{j,1,i-1}]),{i,1,n}]; 
+polynomial=Simplify[p[x]]; 
+evaluatedValue=Evaluate[p[3.5]]; 
+Print["Interpolating polynomial: ",Expand[polynomial]]; 
+Print["Value at x = 3.5: ",evaluatedValue]; 
