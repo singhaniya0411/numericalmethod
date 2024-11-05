@@ -1,0 +1,11 @@
+Clear[x]; 
+sum=0; 
+points={{1,3},{2,9},{3,19}}; 
+No=Length[points]; 
+Print["Given values of x[i]are as follows :",y=points[[All,1]]] 
+Print["Given values of f[x[i]] are as follows :",f=points[[All,2]]] 
+lagrange[No_,n_]:=Product[If[Equal[k,n],1,(x-y[[k]])/(y[[n]]-y[[k]])],{k,1,No}] 
+For[i=1,i <= No,i++,sum+=(f[[i]]*lagrange[No,i])] 
+Print[sum] 
+Print["The Polynomial function will be :",Expand[sum]] 
+Print["Polynomial at x=2.5 is :",sum/.x→2.5] 
