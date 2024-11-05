@@ -1,0 +1,18 @@
+f[x_]:= x^2 - 5*x +2; 
+x0=1 
+e = 0.000001; 
+Nmax = 5; 
+x=x0; 
+Print ["Step 0 : [x,f(x)] = [",N[x],"," ,N[f[x]],"]" ] 
+Do[ 
+x1=x; 
+x=x-(f[x]/f'[x]); 
+Print["Step ",i,"[x,f(x)] = [",N[x],"," ,N[f[x]],"]" ]; 
+If[Abs[x1-x]<e , 
+Break[]; 
+]; 
+If[i >= Nmax, 
+Break[]; 
+];, 
+{i,1,Nmax}] 
+Print["The solution is : ",N[x]] 
