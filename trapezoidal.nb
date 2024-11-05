@@ -1,0 +1,14 @@
+a=Input["ENTER THE VALUE OF A: "]; 
+b=Input["ENTER THE VALUE OF B: "]; 
+n=Input["ENTER THE NUMBER OF INTERVALS: "]; 
+h=(b-a)/n; 
+f[x_]:=1/x^2; 
+trap=(f[a]+f[b])/2; 
+For[i=1,i<n,i++,tz+=f[a+i*h]]; 
+trap*=h; 
+(*Print results*) 
+Print["Function: f(x) = 1/x^2"]; 
+Print["Initial Value (a): ",a]; 
+Print["Last Value (b): ",b]; 
+Print["Number of Intervals (n): ",n]; 
+Print["Trapezoidal estimate: ",N[trap]]; 
