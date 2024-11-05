@@ -1,0 +1,15 @@
+f[x_]:=x^3+2 x^2-3 x-1; 
+n=10; 
+p0=1; 
+p1=2; 
+e=0.01; 
+output={}; 
+For[i=0,i<n,i++,p2=p1-(f[p1]*(p1-p0))/(f[p1]-f[p0]); 
+output=AppendTo[output,{i+1,N[p2]}]; 
+If[Abs[p2-p1]<e,Print["error",e,"in",i+1,"iteration"]; 
+Break[]]; 
+If[f[p0]*f[p2]<0,p1=p2,p0=p2];]; 
+Print[TableForm[output,TableHeadings®{None,{"i","p"}}]]; 
+Print["Aprrox=",N[p2],"\n"]; 
+Plot[f[x],{x,1,2}] 
+NSolve[f[x] = 0,x] 
