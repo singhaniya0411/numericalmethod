@@ -1,0 +1,10 @@
+a=Input["ENTER THE VALUE OF A"] 
+b=Input["ENTER THE VALUE OF B"] 
+h=(b-a)/2; 
+c=(b+a)/2; 
+f[x_]:=1/x; 
+sn=h/3*((f[a]+(4*f[c])+f[b])); 
+Print["The function is : 1/x"] 
+Print["Lower value a : ",a] 
+Print["Upper value b : ",b] 
+Print["The Simpson 1/3rd estimation for this function is : ",N[sn]] 
